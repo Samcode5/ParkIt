@@ -8,8 +8,8 @@ const Login = () => {
   const navigation =useNavigation();
 
   const Pressed=(()=>{
- 
-      navigation.navigate('MapScreen')
+  
+      navigation.navigate('UserLocation')
   })
   
 
