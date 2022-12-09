@@ -6,11 +6,24 @@ import { selectOrigin } from '../slices/navSlice'
 import { useSelector } from 'react-redux'
 import MapViewDirections from 'react-native-maps-directions'
 import { selectDestination } from '../slices/navSlice'
-
+const GOOGLE_MAPS_APIKEY = 'AIzaSyCKhQLwdC36c_xsTnvhwL1FvH4hQOlEoss';
+ 
 const Map = () => {
 
 const origin= useSelector(selectOrigin)
 const destination=useSelector(selectDestination);
+
+const coordinates=[
+  {
+    latitude:origin.location.lat,
+    longitude:origin.location.lng
+
+  },
+  {
+    latitude:12.9692,
+    longitude:79.1559
+  }
+]
 
 return (
  <MapView
@@ -27,10 +40,28 @@ return (
     <MapViewDirections
     origin={origin.description}
     destination={destination.description}
-    apikey={AIzaSyD3vD6amrGD_vhjixTiRqXfAsyZ34kAsr0}
+    apikey={GOOGLE_MAPS_APIKEY}
+    strokeWidth={3}
+    strokeColor="black"
 
     />
   )}
+  { destination?.location && (
+    <Marker
+    coordinate={
+        {
+        latitude:destination.location.lat,
+        longitude:destination.location.lng,
+        }
+    }
+
+    title="Destination"
+    description={destination.description}
+    >
+    </Marker>
+    )}
+
+
 
   { origin?.location && (
     <Marker

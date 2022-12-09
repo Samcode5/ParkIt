@@ -6,6 +6,9 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 import NavOption from '../components/NavOption';
 import { useDispatch } from 'react-redux';
 import { setDestination,setOrigin } from '../slices/navSlice';
+import InputText from '../components/InputText';
+import { TextInput } from 'react-native-gesture-handler';
+import { BorderOutlined } from '@ant-design/icons';
 
 
 const data=[
@@ -32,6 +35,8 @@ const UserLocation = () => {
           },
         textInput:{
           fontSize:18,
+          borderColor:"gray200",
+          border:"2px solid"
           
         }
       }}
@@ -50,12 +55,14 @@ const UserLocation = () => {
          dispatch(setDestination(null));
       }}
       query={{
-        key: 'AIzaSyDMsYREH_pD-6uLwpI61-o_ayzPWBEgtf4',
+        key: 'AIzaSyCKhQLwdC36c_xsTnvhwL1FvH4hQOlEoss',
         language: 'en',
       }}
       nearbyPlacesAPI="GooglePlacesSearch"
       debounce={400}
     />
+    <TextInput  style={tw`p-2 pl-3 mt-1 mb-5 bg-gray-50 border-2 border-gray-100 rounded-xl`}placeholder='Arrival time'/>
+    <TextInput  style={tw`p-2 pl-3 mt-1 mb-5 bg-gray-50 border-2 border-gray-100 rounded-xl`}placeholder='leave time'/>
     <NavOption></NavOption>
     </View>
   )

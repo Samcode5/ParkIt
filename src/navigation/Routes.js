@@ -6,7 +6,8 @@ import Signup from '../screens/Signup';
 import Login from '../screens/Login';
 import MapScreen from '../screens/MapScreen';
 import UserLocation from '../screens/UserLocation';
-
+import Profile from '../screens/Profile';
+import BookingScreen from '../screens/BookingScreen';
 
 const Stack = createStackNavigator();
 
@@ -19,7 +20,9 @@ function Routes()
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="UserLocation" component={UserLocation}/>
-        <Stack.Screen name="MapScreen" component={MapScreen} />
+        <Stack.Screen name="MapScreen" component={MapScreen}/>
+        <Stack.Screen name="Profile" component={Profile}/>
+        <Stack.Screen name="BookingScreen" component={BookingScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
 

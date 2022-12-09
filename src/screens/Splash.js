@@ -4,7 +4,8 @@ import AppLoading from 'expo-app-loading';
 import {
   useFonts,
  Roboto_400Regular,
-  Roboto_400Regular_Italic
+ Roboto_400Regular_Italic,
+ Roboto_900Black
 } from '@expo-google-fonts/roboto';
 
 
@@ -14,7 +15,8 @@ const Splash = ({navigation}) => {
 
   let [fontsload,error] = useFonts({
     Roboto_400Regular,
-    Roboto_400Regular_Italic
+    Roboto_400Regular_Italic,
+    Roboto_900Black
 
   })
    if(!fontsload)
@@ -47,16 +49,16 @@ const styles = StyleSheet.create({
   
  
   name:{
-     fontSize:20,
-     fontWeight:'bold',
+     fontSize:22,
+     fontWeight:"bold",
      paddingTop:10,
-     fontFamily:'Roboto_400Regular',
+     fontFamily:"Roboto_900Black",
      textAlign:'center'
      
 },
 subtitle:{
   fontFamily:"Roboto_400Regular_Italic",
-  fontSize:12,
+  fontSize:15,
   marginBottom:100
 
 }

@@ -3,7 +3,10 @@ import { createSlice} from "@reduxjs/toolkit";
 const initialState={
  origin:null,
  destination:null,
- travelTimeInformation:null
+ travelTimeInformation:null,
+ name:null,
+ vehicle:null,
+ contact:null,
 
 }
 
